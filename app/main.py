@@ -16,7 +16,8 @@ def get_weather(api_key: str) -> None:
         local_time = data["location"]["localtime"]
         temp_c = data["current"]["temp_c"]
         condition = data["current"]["condition"]["text"]
-        return f"{city}/{country} {local_time} Weather: {temp_c} Celsius, {condition}"
+        return (f"{city}/{country} {local_time} "
+                f"Weather: {temp_c} Celsius, {condition}")
     else:
         return f"Error : {response.status_code} - {response.text}"
 
