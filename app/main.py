@@ -25,4 +25,7 @@ def get_weather(api_key: str) -> None:
 if __name__ == "__main__":
 
     api_key = os.getenv("API_KEY")
+    if not api_key:
+        raise ValueError("API_KEY is not set in environment variables")
+
     print(get_weather(api_key))
